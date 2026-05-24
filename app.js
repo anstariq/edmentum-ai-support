@@ -31,6 +31,7 @@ function setIdle() {
 }
 
 function setConnecting() {
+  calling = true;
   callBtn.disabled = true;
   btnLabel.textContent = "Connecting…";
   setStatus("connecting", "Connecting…");
@@ -46,6 +47,8 @@ function setActive() {
 }
 
 function setError() {
+  calling = false;
+  callBtn.disabled = true;
   setStatus("error", "Connection failed");
   setTimeout(setIdle, 3000);
 }
