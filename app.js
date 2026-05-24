@@ -1,4 +1,4 @@
-import Vapi from "https://cdn.jsdelivr.net/npm/@vapi-ai/web/+esm";
+import Vapi from "https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.3.3/+esm";
 
 // ── Config — fill in your credentials ──────────────────────────────────────
 const PUBLIC_KEY = "your-vapi-public-key";
@@ -34,6 +34,7 @@ function setConnecting() {
   calling = true;
   callBtn.disabled = true;
   btnLabel.textContent = "Connecting…";
+  btnIcon.textContent = "⏳";
   setStatus("connecting", "Connecting…");
 }
 
