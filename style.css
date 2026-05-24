@@ -35,34 +35,14 @@ body {
 }
 
 .nav__logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
 }
 
-.logo-e {
-  color: #e03a8c;
-}
-.logo-d {
-  color: #f5a623;
-}
-.logo-m {
-  color: #7bc67e;
-}
-.logo-e2 {
-  color: #4a90d9;
-}
-.logo-n {
-  color: #e03a8c;
-}
-.logo-t {
-  color: #f5a623;
-}
-.logo-u {
-  color: #4a90d9;
-}
-.logo-m2 {
-  color: #7bc67e;
+.nav__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .nav__label {
