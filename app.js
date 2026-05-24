@@ -1,4 +1,4 @@
-import Vapi from "https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.3.3/+esm";
+import Vapi from "https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.5.2/+esm";
 
 // ── Config — fill in your credentials ──────────────────────────────────────
 const PUBLIC_KEY = "07a2396d-9738-4838-af99-f6a18d946f0b";
