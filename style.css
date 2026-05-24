@@ -349,13 +349,17 @@ body {
   color: var(--magenta);
 }
 
+/* ── VAPI BUILT-IN BUTTON (hidden — we use our own) ── */
+.vapi-btn {
+  display: none !important;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   .nav {
     padding: 12px 18px;
   }
   .hero {
-
     padding: 48px 18px;
   }
   .hero__heading {
