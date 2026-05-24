@@ -8,7 +8,7 @@ Single-page demo combining Vapi voice bot and chatQuartz chatbot, styled with Ed
    - `PUBLIC_KEY` — your Vapi public key (Vapi dashboard → Account → API Keys)
    - `ASSISTANT_ID` — your Vapi assistant ID (Vapi dashboard → Assistants → select → copy ID)
 
-2. For chatQuartz (Talha): drop the chatQuartz script tag into `index.html` just before `</body>` and target `#chatquartz-container` as the mount point.
+2. To embed the chatQuartz widget, drop the chatQuartz script tag into `index.html` just before `</body>` and target `#chatquartz-container` as the mount point.
 
 ## Local development
 
@@ -18,22 +18,6 @@ npx serve .
 ```
 Then open http://localhost:3000
 
-## Deploy to Vercel
+## Deploy
 
-First time only:
-```
-npm i -g vercel
-vercel login
-```
-
-Deploy preview:
-```
-vercel
-```
-
-Deploy to production:
-```
-vercel --prod
-```
-
-Alternatively connect this repo to the Vercel dashboard for automatic deploys on every push to main.
+This repo is connected to Vercel. Every push to `main` automatically deploys to production.
