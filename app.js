@@ -1,8 +1,8 @@
 import Vapi from "https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.3.3/+esm";
 
 // ── Config — fill in your credentials ──────────────────────────────────────
-const PUBLIC_KEY = "your-vapi-public-key";
-const ASSISTANT_ID = "your-vapi-assistant-id";
+const PUBLIC_KEY = "07a2396d-9738-4838-af99-f6a18d946f0b";
+const ASSISTANT_ID = "41ea049a-3073-4c2d-a6b4-3cc9db13b6ff";
 // ───────────────────────────────────────────────────────────────────────────
 
 const vapi = new Vapi(PUBLIC_KEY);
