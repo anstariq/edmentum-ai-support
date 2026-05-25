@@ -1,79 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edmentum AI Support</title>
-  <meta name="description" content="Connect with Edmentum's AI-powered support — voice or chat, available 24/7." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav__logo">
-      <img src="edmentum-logo.png" alt="Edmentum" class="nav__logo-img" />
-    </div>
-    <span class="nav__label">AI Support Center</span>
-  </nav>
-
-  <!-- RAINBOW STRIPE -->
-  <div class="rainbow-stripe"></div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__content">
-      <h1 class="hero__heading">How can we help you today?</h1>
-      <p class="hero__sub">Connect with Edmentum's AI-powered support — by voice or chat, available 24/7.</p>
-      <div class="hero__actions">
-        <button id="call-btn" class="btn btn--primary">
-          <span class="btn__icon">📞</span>
-          <span id="call-btn-label">Click to Call</span>
-        </button>
-        <a href="#chat-section" class="btn btn--outline">
-          <span class="btn__icon">💬</span>
-          Chat Instead
-        </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edmentum AI Support</title>
+    <meta
+      name="description"
+      content="Connect with Edmentum's AI-powered support — voice or chat, available 24/7."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav__logo">
+        <img src="edmentum-logo.png" alt="Edmentum" class="nav__logo-img" />
       </div>
-      <div class="status-pill">
-        <span class="status-pill__dot" id="status-dot"></span>
-        <span id="status-label">Ready to connect</span>
-      </div>
-    </div>
-  </section>
+      <span class="nav__label">AI Support Center</span>
+    </nav>
 
-  <!-- CHAT SECTION -->
-  <section class="chat-section" id="chat-section">
-    <div class="chat-section__header">
-      <span class="chat-section__title">AI Chat Support</span>
-      <span class="chat-section__online">
-        <span class="online-dot"></span>
-        Online 24/7
-      </span>
-    </div>
-    <div class="chat-panel">
-      <div class="chat-panel__header">
-        <div class="chat-panel__avatar">🤖</div>
-        <div>
-          <div class="chat-panel__name">Edmentum AI Assistant</div>
-          <div class="chat-panel__sub">AI Support Assistant</div>
+    <!-- RAINBOW STRIPE -->
+    <div class="rainbow-stripe"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__heading">How can we help you today?</h1>
+        <p class="hero__sub">
+          Connect with Edmentum's AI-powered support — by voice or chat,
+          available 24/7.
+        </p>
+        <div class="hero__actions">
+          <button id="call-btn" class="btn btn--primary">
+            <span class="btn__icon">📞</span>
+            <span id="call-btn-label">Click to Call</span>
+          </button>
+          <a href="#chat-section" class="btn btn--outline">
+            <span class="btn__icon">💬</span>
+            Chat Instead
+          </a>
         </div>
-        <div class="chat-panel__status">
-          <span class="active-dot"></span>
-          Active
+        <div class="status-pill">
+          <span class="status-pill__dot" id="status-dot"></span>
+          <span id="status-label">Ready to connect</span>
         </div>
       </div>
-      <!-- chatQuartz widget mount point -->
-      <div id="chatquartz-container" class="chat-panel__body"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <span class="footer__copy">© Edmentum, Inc. All Rights Reserved.</span>
-  </footer>
+    <!-- CHAT SECTION -->
+    <section class="chat-section" id="chat-section">
+      <div class="chat-section__header">
+        <span class="chat-section__title">AI Chat Support</span>
+        <span class="chat-section__online">
+          <span class="online-dot"></span>
+          Online 24/7
+        </span>
+      </div>
+      <div class="chat-panel">
+        <div class="chat-panel__header">
+          <div class="chat-panel__avatar">🤖</div>
+          <div>
+            <div class="chat-panel__name">Edmentum AI Assistant</div>
+            <div class="chat-panel__sub">AI Support Assistant</div>
+          </div>
+          <div class="chat-panel__status">
+            <span class="active-dot"></span>
+            Active
+          </div>
+        </div>
+        <!-- chatQuartz widget mount point -->
+        <div id="chatquartz-container" class="chat-panel__body"></div>
+      </div>
+    </section>
 
-  <script src="app.js"></script>
-</body>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span class="footer__copy">© Edmentum, Inc. All Rights Reserved.</span>
+    </footer>
+
+    <script src="app.js"></script>
+    <!-- chatQuartz -->
+    <script
+      id="chat-init"
+      src="https://beta.ai.chatquartz.com/account/js/init.js?id=13202997"
+    ></script>
+  </body>
 </html>
