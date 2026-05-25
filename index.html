@@ -85,6 +85,12 @@
     <script src="app.js"></script>
     <!-- chatQuartz - Proxy all XMLHttpRequest to chatQuartz to avoid CORS issues -->
     <script>
+      // Extract ID from script tag for use in proxy
+      const chatInitScript = document.getElementById('chat-init');
+      const scriptSrc = chatInitScript ? chatInitScript.src : '';
+      const idMatch = scriptSrc.match(/id=(\d+)/);
+      const CHAT_ID = idMatch ? idMatch[1] : '13202997';
+
       // Intercept XMLHttpRequest to proxy chatQuartz requests through our API
       const OriginalXHR = window.XMLHttpRequest;
       const XHRPrototype = OriginalXHR.prototype;
@@ -93,8 +99,8 @@
       XHRPrototype.open = function (method, url, ...args) {
         // Intercept all requests to chatquartz.com and redirect to our proxy
         if (typeof url === 'string' && url.includes('beta.ai.chatquartz.com')) {
-          // Replace the domain with our proxy endpoint
-          const newUrl = `/api/chatquartz-proxy?url=${encodeURIComponent(url)}`;
+          // Replace the domain with our proxy endpoint, including the chat ID
+          const newUrl = `/api/chatquartz-proxy?id=${CHAT_ID}&url=${encodeURIComponent(url)}`;
           return originalOpen.call(this, method, newUrl, ...args);
         }
         return originalOpen.call(this, method, url, ...args);

@@ -1,9 +1,10 @@
 /**
  * Generic proxy endpoint for all chatQuartz requests
  * Forwards any request to chatQuartz backend, bypassing CORS issues
+ * Ensures the chat ID is preserved through the request chain
  */
 export default async function handler(req, res) {
-    const { url } = req.query;
+    const { url, id } = req.query;
 
     if (!url) {
         return res.status(400).json({ error: "Missing url parameter" });
@@ -11,13 +12,19 @@ export default async function handler(req, res) {
 
     try {
         // Decode the URL that was passed
-        const decodedUrl = decodeURIComponent(url);
+        let decodedUrl = decodeURIComponent(url);
 
         // Validate that it's actually a chatQuartz URL
         if (!decodedUrl.includes("beta.ai.chatquartz.com")) {
             return res
                 .status(400)
                 .json({ error: "Invalid URL - must be from chatQuartz" });
+        }
+
+        // Ensure the id parameter is included in the request if provided
+        if (id && !decodedUrl.includes(`id=${id}`)) {
+            const separator = decodedUrl.includes('?') ? '&' : '?';
+            decodedUrl = `${decodedUrl}${separator}id=${encodeURIComponent(id)}`;
         }
 
         const response = await fetch(decodedUrl, {
