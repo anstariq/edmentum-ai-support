@@ -13,6 +13,8 @@
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://beta.ai.chatquartz.com" />
+    <link rel="dns-prefetch" href="https://beta.ai.chatquartz.com" />
   </head>
   <body>
     <!-- NAV -->
@@ -31,49 +33,18 @@
       <div class="hero__content">
         <h1 class="hero__heading">How can we help you today?</h1>
         <p class="hero__sub">
-          Connect with Edmentum's AI-powered support — by voice or chat,
-          available 24/7.
+          Connect with Edmentum's AI-powered support — speak with our AI assistant instantly, or use the chat button in the corner.
         </p>
         <div class="hero__actions">
           <button id="call-btn" class="btn btn--primary">
             <span class="btn__icon">📞</span>
             <span id="call-btn-label">Click to Call</span>
           </button>
-          <a href="#chat-section" class="btn btn--outline">
-            <span class="btn__icon">💬</span>
-            Chat Instead
-          </a>
         </div>
         <div class="status-pill">
           <span class="status-pill__dot" id="status-dot"></span>
           <span id="status-label">Ready to connect</span>
         </div>
-      </div>
-    </section>
-
-    <!-- CHAT SECTION -->
-    <section class="chat-section" id="chat-section">
-      <div class="chat-section__header">
-        <span class="chat-section__title">AI Chat Support</span>
-        <span class="chat-section__online">
-          <span class="online-dot"></span>
-          Online 24/7
-        </span>
-      </div>
-      <div class="chat-panel">
-        <div class="chat-panel__header">
-          <div class="chat-panel__avatar">🤖</div>
-          <div>
-            <div class="chat-panel__name">Edmentum AI Assistant</div>
-            <div class="chat-panel__sub">AI Support Assistant</div>
-          </div>
-          <div class="chat-panel__status">
-            <span class="active-dot"></span>
-            Active
-          </div>
-        </div>
-        <!-- chatQuartz widget mount point -->
-        <div id="chatquartz-container" class="chat-panel__body"></div>
       </div>
     </section>
 

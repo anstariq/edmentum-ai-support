@@ -78,42 +78,47 @@ body {
       center / cover no-repeat;
   padding: 72px 32px;
   flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero__content {
-  max-width: 580px;
+  max-width: 620px;
+  text-align: center;
 }
 
 .hero__heading {
-  font-size: 36px;
+  font-size: 48px;
   color: var(--white);
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 12px;
+  line-height: 1.15;
+  margin-bottom: 16px;
 }
 
 .hero__sub {
-  font-size: 15px;
+  font-size: 17px;
   color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
-  margin-bottom: 32px;
+  line-height: 1.7;
+  margin-bottom: 40px;
 }
 
 .hero__actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
 /* ── BUTTONS ── */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 26px;
-  border-radius: 4px;
-  font-size: 14px;
+  gap: 10px;
+  padding: 16px 40px;
+  border-radius: 6px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   border: none;
