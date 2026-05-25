@@ -83,58 +83,31 @@
     </footer>
 
     <script src="app.js"></script>
-    <!-- chatQuartz - Initialize via local proxy to avoid CORS issues -->
+    <!-- chatQuartz - Proxy init.php XMLHttpRequest to avoid CORS issues -->
     <script>
-      (function () {
-        const containerId = 'chatquartz-container';
-        const accountId = '13202997';
+      // Intercept XMLHttpRequest to proxy init.php through our API
+      const OriginalXHR = window.XMLHttpRequest;
+      const XHRPrototype = OriginalXHR.prototype;
+      const originalOpen = XHRPrototype.open;
 
-        // Fetch chat initialization data from local proxy
-        fetch(`/api/chatquartz-init?id=${accountId}`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                `Failed to initialize chat: ${response.statusText}`,
-              );
-            }
-            return response.json();
-          })
-          .then((data) => {
-            if (!data || !data[0]) {
-              throw new Error('Invalid response from chat initialization');
-            }
-
-            // Data format: [encrypted_token, version]
-            const encryptedData = data[0];
-            const version = data[1];
-
-            // Load and initialize the chatQuartz widget with the token
-            const script = document.createElement('script');
-            script.src = 'https://beta.ai.chatquartz.com/account/js/init.js';
-            script.onload = function () {
-              // Initialize with the token from our proxy
-              if (window.chatQuartzInit) {
-                window.chatQuartzInit({
-                  container: containerId,
-                  token: encryptedData,
-                  version: version,
-                });
-              }
-            };
-            script.onerror = function () {
-              console.error('Failed to load chatQuartz widget script');
-            };
-            document.head.appendChild(script);
-          })
-          .catch((error) => {
-            console.error('Chat initialization error:', error);
-            const container = document.getElementById(containerId);
-            if (container) {
-              container.innerHTML =
-                '<p style="color: red; padding: 20px;">Unable to load chat. Please refresh the page.</p>';
-            }
-          });
-      })();
+      XHRPrototype.open = function (method, url, ...args) {
+        // Intercept requests to init.php and redirect to our proxy
+        if (typeof url === 'string' && url.includes('/account/init.php')) {
+          const urlObj = new URL(url, window.location.origin);
+          const id = urlObj.searchParams.get('id');
+          if (id) {
+            // Replace with our proxy endpoint
+            const newUrl = `/api/chatquartz-init?id=${encodeURIComponent(id)}`;
+            return originalOpen.call(this, method, newUrl, ...args);
+          }
+        }
+        return originalOpen.call(this, method, url, ...args);
+      };
     </script>
+    <!-- chatQuartz - Load with ID parameter for proper initialization -->
+    <script
+      id="chat-init"
+      src="https://beta.ai.chatquartz.com/account/js/init.js?id=13202997"
+    ></script>
   </body>
 </html>
