@@ -1,6 +1,6 @@
 // ── Config ──────────────────────────────────────────────────────────────────
 var PUBLIC_KEY = "07a2396d-9738-4838-af99-f6a18d946f0b";
-var ASSISTANT_ID = "41ea049a-3073-4c2d-a6b4-3cc9db13b6ff";
+var ASSISTANT_ID = "e9e14ea9-ea36-4877-bc6a-ba3cf94ebd3e";
 // ────────────────────────────────────────────────────────────────────────────
 
 var callBtn = document.getElementById("call-btn");
